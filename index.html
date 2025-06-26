@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Map Satelit</title>
+  <title>Map Satelit - Batam</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,9 +12,9 @@
     }
 
     #startBtn {
-      padding: 10px 25px;
+      padding: 12px 30px;
       font-size: 18px;
-      background-color: #007BFF;
+      background-color: #28a745;
       color: white;
       border: none;
       border-radius: 10px;
@@ -23,7 +23,7 @@
     }
 
     #startBtn:hover {
-      background-color: #0056b3;
+      background-color: #218838;
     }
 
     #mapContainer {
@@ -51,7 +51,8 @@
 
   <div id="mapContainer">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d126917.63550357853!2d106.8271536!3d-6.1753943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1719416123456!5m2!1sen!2sid"
+      id="mapFrame"
+      src=""
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
@@ -61,15 +62,20 @@
   <script>
     const startBtn = document.getElementById('startBtn');
     const mapContainer = document.getElementById('mapContainer');
+    const mapFrame = document.getElementById('mapFrame');
 
     startBtn.addEventListener('click', () => {
       startBtn.disabled = true;
       startBtn.innerText = 'Loading...';
 
       setTimeout(() => {
+        // Ganti dengan lokasi Batam, view satelit
+        const batamMapURL = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15938.97348013483!2d104.030453!3d1.1068705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1719400000000!5m2!1sid!2sid";
+
+        mapFrame.src = batamMapURL;
         mapContainer.classList.add('show');
         startBtn.style.display = 'none';
-      }, 2000); // 2 detik jeda
+      }, 2000); // jeda 2 detik
     });
   </script>
 
